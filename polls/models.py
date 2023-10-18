@@ -5,8 +5,8 @@ from django.db import models
 from django.utils import timezone
 
 class Question(models.Model):
+    question_cat = models.CharField(max_length=50, default='N/A')
     question_text = models.CharField(max_length=200)
-    question_num = models.IntegerField(default=1, validators=[MinValueValidator(1)])
     pub_date = models.DateTimeField("date published")
     
     def __str__(self):
