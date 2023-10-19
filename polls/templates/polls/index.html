@@ -4,11 +4,11 @@
 <html>
 <head>
     <title>Polls</title>
-    <link rel="stylesheet" href="{% static '/static/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
     
-    <header class="test" >
-        <h1>Welcome to my poll! Laura is cute.</h1>
+    <header class="polls_header">
+        <h1 class="test">Welcome to my poll!</h1>
         <p class="test">Please select a question below to vote.</p>
     </header>
 
@@ -16,7 +16,7 @@
         {% if latest_question_list %}
             <ul>
             {% for question in latest_question_list %}
-                <li class="test"><a href="{% url 'polls:detail' question.id %}">Question {{question.pk }}:
+                <li><a href="{% url 'polls:detail' question.id %}">Question {{question.pk }}:
                      {{ question.question_text }}</a></li>
             {% endfor %}
             </ul>

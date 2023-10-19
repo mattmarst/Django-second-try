@@ -25,7 +25,7 @@ DEBUG = config('DEBUG')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ycntwkg77e2^b225u_#v%$+1o6w^g%1(=axu)twk1)xkl7$l@i'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL'),
-        #'postgres://mattm:6KSXnrKk9kiwSay0ML9Xhp6PxJ4lHj1B@dpg-ckmt3o11rp3c73db4v0g-a.oregon-postgres.render.com/testdb_25p0',
         conn_max_age=600
     )
 }    
